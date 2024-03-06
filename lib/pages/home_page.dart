@@ -1,4 +1,5 @@
 import 'package:coffee_app/util/coffee_tile.dart';
+import 'package:coffee_app/util/coffee_type.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/painting.dart';
@@ -11,6 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  // user tapped on coffee types
+  void coffeeTypeSelected (){
+
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,10 +88,22 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children:[
-                Text('Cappucino'),
-                Text('Cappucino'),
-                Text('Cappucino'),
-                Text('Cappucino'),
+                CoffeeType(
+                  coffeeType: "Cappucino",
+                  isSelected: true,
+                  onTap: coffeeTypeSelected,),
+                CoffeeType(
+                  coffeeType: "Latte",
+                  isSelected: false,
+                  onTap: coffeeTypeSelected,),
+                CoffeeType(
+                  coffeeType: "MilkCoffee",
+                  isSelected: false,
+                  onTap: coffeeTypeSelected,),
+                CoffeeType(
+                  coffeeType: "Espresso",
+                  isSelected: false,
+                  onTap: coffeeTypeSelected,),
               ],
             ),
           ),

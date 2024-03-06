@@ -1,10 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CoffeeType extends StatelessWidget {
-  const CoffeeType({super.key});
+  final String coffeeType;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  CoffeeType({
+    required this.coffeeType,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 25.0),
+        child: Text(
+          coffeeType,
+          style: GoogleFonts.lato(
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            color: isSelected ? Colors.orange : Colors.white,
+          ),
+        ),
+      ),
+    );
   }
 }
