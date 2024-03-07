@@ -15,26 +15,16 @@ class _HomePageState extends State<HomePage> {
   // list of coffee types
   final List coffeeType = [
     // [ coffee type, isSelected ]
-    [
-      'Cappucino' 
-    , true
-    ],
-        [
-      'Latte' 
-    , false
-    ],
-        [
-      'Milkcoffee' 
-    , true
-    ],
-        [
-      'Espresso' 
-    , true
-    ],
+    ['Cappucino', true],
+    ['Latte', false],
+    ['Milkcoffee', true],
+    ['Espresso', true],
   ];
 
   // user tapped on coffee types
-  void coffeeTypeSelected() {}
+  void coffeeTypeSelected(int index) {
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,34 +89,19 @@ class _HomePageState extends State<HomePage> {
 
           //horizontal list for coffee types
           Container(
-            height: 50,
-            color: Colors.transparent,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                CoffeeType(
-                  coffeeType: "Cappucino",
-                  isSelected: true,
-                  onTap: coffeeTypeSelected,
-                ),
-                CoffeeType(
-                  coffeeType: "Latte",
-                  isSelected: false,
-                  onTap: coffeeTypeSelected,
-                ),
-                CoffeeType(
-                  coffeeType: "MilkCoffee",
-                  isSelected: false,
-                  onTap: coffeeTypeSelected,
-                ),
-                CoffeeType(
-                  coffeeType: "Espresso",
-                  isSelected: false,
-                  onTap: coffeeTypeSelected,
-                ),
-              ],
-            ),
-          ),
+              height: 50,
+              color: Colors.transparent,
+              child: ListView.builder(
+                  itemCount: coffeeType.length,
+                  itemBuilder: (context, index) {
+                    return CoffeeType(
+                      coffeeType: coffeeType[index][0],
+                      isSelected: coffeeType[index][1],
+                      onTap: () {
+                        coffeeTypeSelected(index);
+                      },
+                    );
+                  })),
 
           //horizontal list of coffee tiles
           Expanded(
