@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     ['Latte', false],
     ['Milkcoffee', true],
     ['Espresso', true],
+    ['Hot Chocolate', true]
   ];
 
   // user tapped on coffee types
@@ -127,10 +128,22 @@ class _HomePageState extends State<HomePage> {
                 coffeeDescription: 'with Foam',
                 coffeePrice: '\$4.99',
               ),
-                            CoffeeTile(
+              CoffeeTile(
                 coffeeImagePath: 'assets/images/MilkCoffee.jpg',
-                coffeeName: 'Cappucino',
+                coffeeName: 'MilkCoffee',
                 coffeeDescription: 'with Foam',
+                coffeePrice: '\$4.99',
+              ),
+              CoffeeTile(
+                coffeeImagePath: 'assets/images/Espresso.jpg',
+                coffeeName: 'Espresso',
+                coffeeDescription: 'with Foam',
+                coffeePrice: '\$4.99',
+              ),
+              CoffeeTile(
+                coffeeImagePath: 'assets/images/Hot_Chocolate.jpg',
+                coffeeName: 'Hot Chocolate',
+                coffeeDescription: 'with Whipped Cream',
                 coffeePrice: '\$4.99',
               ),
               
