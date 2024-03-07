@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                 coffeePrice: '\$4.99',
               ),
               CoffeeTile(
-                coffeeImagePath: 'assets/images/Hot_Chocolate.jpg',
+                coffeeImagePath: 'assets/images/HotChocolate.jpg',
                 coffeeName: 'Hot Chocolate',
                 coffeeDescription: 'with Whipped Cream',
                 coffeePrice: '\$4.99',
