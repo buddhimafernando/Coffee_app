@@ -12,12 +12,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // list of coffee types
+  final List coffeeType = [
+    // [ coffee type, isSelected ]
+    [
+      'Cappucino' 
+    , true
+    ],
+        [
+      'Latte' 
+    , false
+    ],
+        [
+      'Milkcoffee' 
+    , true
+    ],
+        [
+      'Espresso' 
+    , true
+    ],
+  ];
 
   // user tapped on coffee types
-  void coffeeTypeSelected (){
+  void coffeeTypeSelected() {}
 
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,32 +46,31 @@ class _HomePageState extends State<HomePage> {
         leading: Icon(Icons.menu),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right:25.0),
+            padding: const EdgeInsets.only(right: 25.0),
             child: Icon(Icons.person),
           ),
         ],
       ),
       // navigation bar
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: '',
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: '',
-            ),
-        ]),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications),
+          label: '',
+        ),
+      ]),
       body: Column(
         children: [
-          //Find the best coffee for you 
+          //Find the best coffee for you
           Padding(
-            padding: const EdgeInsets.only(left: 20.0,top: 10.0),
+            padding: const EdgeInsets.only(left: 20.0, top: 10.0),
             child: Text(
               "Find the best coffee for you",
               style: GoogleFonts.bebasNeue(
@@ -68,15 +85,14 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: TextField(
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                hintText: "Find your coffee...",
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                )
-              ),
+                  prefixIcon: Icon(Icons.search),
+                  hintText: "Find your coffee...",
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  )),
             ),
           ),
           SizedBox(height: 25.0),
@@ -87,35 +103,39 @@ class _HomePageState extends State<HomePage> {
             color: Colors.transparent,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children:[
+              children: [
                 CoffeeType(
                   coffeeType: "Cappucino",
                   isSelected: true,
-                  onTap: coffeeTypeSelected,),
+                  onTap: coffeeTypeSelected,
+                ),
                 CoffeeType(
                   coffeeType: "Latte",
                   isSelected: false,
-                  onTap: coffeeTypeSelected,),
+                  onTap: coffeeTypeSelected,
+                ),
                 CoffeeType(
                   coffeeType: "MilkCoffee",
                   isSelected: false,
-                  onTap: coffeeTypeSelected,),
+                  onTap: coffeeTypeSelected,
+                ),
                 CoffeeType(
                   coffeeType: "Espresso",
                   isSelected: false,
-                  onTap: coffeeTypeSelected,),
+                  onTap: coffeeTypeSelected,
+                ),
               ],
             ),
           ),
 
           //horizontal list of coffee tiles
           Expanded(
-            child:ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                CoffeeTile(),
-              ],
-            ))
+              child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              CoffeeTile(),
+            ],
+          ))
         ],
       ),
     );
