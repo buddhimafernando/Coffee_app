@@ -23,7 +23,13 @@ class _HomePageState extends State<HomePage> {
 
   // user tapped on coffee types
   void coffeeTypeSelected(int index) {
-    
+    setState(() {
+      // this loop makes every selection false
+      for(int i=0; i<coffeeType.length; i++){
+        coffeeType[i][1] = false;
+      }
+      coffeeType[index][1] = true;
+    });
   }
 
   @override
@@ -92,6 +98,7 @@ class _HomePageState extends State<HomePage> {
               height: 50,
               color: Colors.transparent,
               child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   itemCount: coffeeType.length,
                   itemBuilder: (context, index) {
                     return CoffeeType(
@@ -108,7 +115,25 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              CoffeeTile(),
+              CoffeeTile(
+                coffeeImagePath: 'assets/images/Cappucino.jpg',
+                coffeeName: 'Cappucino',
+                coffeeDescription: 'with Foam',
+                coffeePrice: '\$4.99',
+              ),
+              CoffeeTile(
+                coffeeImagePath: 'assets/images/Latte.jpg',
+                coffeeName: 'Latte',
+                coffeeDescription: 'with Foam',
+                coffeePrice: '\$4.99',
+              ),
+                            CoffeeTile(
+                coffeeImagePath: 'assets/images/MilkCoffee.jpg',
+                coffeeName: 'Cappucino',
+                coffeeDescription: 'with Foam',
+                coffeePrice: '\$4.99',
+              ),
+              
             ],
           ))
         ],

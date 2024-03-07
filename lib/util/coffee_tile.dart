@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CoffeeTile extends StatelessWidget {
-  const CoffeeTile({super.key});
+  final String coffeeImagePath;
+  final String coffeeName;
+  final String coffeeDescription;
+  final String coffeePrice;
+
+  CoffeeTile({
+    required this.coffeeImagePath,
+    required this.coffeeName,
+    required this.coffeeDescription,
+    required this.coffeePrice,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +32,7 @@ class CoffeeTile extends StatelessWidget {
             // coffee image
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset('assets/images/Cappucino.jpg'),
+              child: Image.asset(coffeeImagePath),
             ),
 
             // coffee name
@@ -33,12 +43,12 @@ class CoffeeTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Cappucino",
+                    coffeeName,
                     style: GoogleFonts.lato(
                         fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "With dark coffee",
+                    coffeeDescription,
                     style: GoogleFonts.lato(
                       fontSize: 14,
                       color: Color.fromARGB(255, 94, 94, 94),
@@ -56,7 +66,7 @@ class CoffeeTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$ 4.00",
+                    "\$" + coffeePrice,
                     style: GoogleFonts.lato(
                       fontSize: 18,
                       color: Color.fromARGB(255, 255, 255, 255),
