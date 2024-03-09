@@ -1,3 +1,4 @@
+import "package:coffee_app/components/my_button.dart";
 import "package:flutter/material.dart";
 
 class SplashScreen extends StatelessWidget {
@@ -7,13 +8,15 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/splashscreen_bg.jpg"),
-            fit: BoxFit.cover,
+            image: AssetImage("assets/images/splashscreen_bg.png"),
+            fit: BoxFit.fitHeight,
           ),
         ),
+
       ),
+      
     );
   }
 }

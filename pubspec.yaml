@@ -67,6 +67,7 @@ flutter:
     - assets/images/MilkCoffee.jpg
     - assets/images/Espresso.jpg
     - assets/images/HotChocolate.jpg
+    - assets/images/splashscreen_bg.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
