@@ -1,4 +1,5 @@
 import 'package:coffee_app/pages/home_page.dart';
+import 'package:coffee_app/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/painting.dart';
@@ -13,12 +14,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.orange,
-      ),
+        debugShowCheckedModeBanner: false,
+        //home: HomePage(),
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.orange,
+        ),
+        routes: {
+          '/splash_screen': (context) => const SplashScreen(),
+          '/home_page': (context) => const HomePage(),
+        }
     );
   }
 }
