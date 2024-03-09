@@ -8,14 +8,28 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/splashscreen_bg.png"),
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
           ),
         ),
-
-      ),
+        child: Padding(
+          padding: const EdgeInsets.only(top:180),
+          child: Text(
+              "Grab your coffee",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+        ),
+        ),
+      
       
     );
   }
