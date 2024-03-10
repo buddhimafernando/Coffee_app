@@ -38,6 +38,11 @@ class SplashScreen extends StatelessWidget {
               }, 
               child: Text(
                 "Get Started",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold
+                ),
               ),
             ),
 
