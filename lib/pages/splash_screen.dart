@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 180),
               child: Text(
-                "Grab your coffee",
+                "Grab your coffee!",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 40,
@@ -32,34 +32,24 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 440,),
+
+            // get started button
             MyButton(
-              onTap: () {
-                Navigator.pushNamed(context, "/home_page");
-              }, 
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
+              onTap: () => Navigator.pushNamed(context, "/home_page"), 
+              child: Center(
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
             ),
 
           ],
         ),
-        // child: Padding(
-        //   padding: const EdgeInsets.only(top: 180),
-        //   child: Text(
-        //     "Grab your coffee",
-        //     textAlign: TextAlign.center,
-        //     style: TextStyle(
-        //       fontSize: 40,
-        //       fontWeight: FontWeight.bold,
-        //       color: Colors.white,
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
