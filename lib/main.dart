@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           primarySwatch: Colors.orange,
         ),
+        routes: {
+          'splash_screen':(context) => const SplashScreen(),
+          'home_page' :(context)=> const HomePage(),
+        },
         
     );
   }

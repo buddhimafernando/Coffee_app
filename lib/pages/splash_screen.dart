@@ -16,21 +16,46 @@ class SplashScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top:180),
-          child: Text(
-              "Grab your coffee",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 180),
+              child: Text(
+                "Grab your coffee",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
+            SizedBox(height: 440,),
+            MyButton(
+              onTap: () {
+                Navigator.pushNamed(context, "/home_page");
+              }, 
+              child: Text(
+                "Get Started",
+              ),
+            ),
+
+          ],
         ),
-        ),
-      
-      
+        // child: Padding(
+        //   padding: const EdgeInsets.only(top: 180),
+        //   child: Text(
+        //     "Grab your coffee",
+        //     textAlign: TextAlign.center,
+        //     style: TextStyle(
+        //       fontSize: 40,
+        //       fontWeight: FontWeight.bold,
+        //       color: Colors.white,
+        //     ),
+        //   ),
+        // ),
+      ),
     );
   }
 }
