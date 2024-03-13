@@ -15,11 +15,11 @@ class _HomePageState extends State<HomePage> {
   // list of coffee types
   final List coffeeType = [
     // [ coffee type, isSelected ]
-    ['Cappucino', true],
-    ['Latte', false],
-    ['Milkcoffee', true],
-    ['Espresso', true],
-    ['Hot Chocolate', true]
+    ['Popular', true],
+    ['Hot Coffee', false],
+    ['Cold Beverages', true],
+    ['Non Coffee', true],
+    ['Cakes', true]
   ];
 
   // user tapped on coffee types
